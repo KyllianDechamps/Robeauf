@@ -10,5 +10,6 @@ module.exports.run = async (bot , message , args) => {
 }
 
 module.exports.help = {
-    name : "pastis"
+    name : "pastis",
+    info : "Envoie une image de pastis dans le channel"
 }
