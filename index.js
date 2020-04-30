@@ -5,7 +5,7 @@ require('dotenv/config')
 // initialise are bot
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-
+bot.queue = []
 //import settings
 const owner = process.env.OWNER
 const token = process.env.TOKEN

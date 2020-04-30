@@ -14,19 +14,35 @@ module.exports.run = async (bot , message , args) => {
         );
     }
 
-   voiceChannel.join().then(connection => {
-       const dispatcher = connection.play(ytdl(args[0]))
-        dispatcher.on("finish", () => {
-            voiceChannel.leave()
-            message.channel.send("Je suis parti")
+    console.log(args[0])
+    bot.queue.push(args[0])
+    console.log(bot.queue)
+
+
+
+    if(bot.queue.length !== 0){
+        bot.queue.forEach((song,i)=>{
+            voiceChannel.join().then(connexion =>{
+                const dispatcher = connexion.play(ytdl(song))
+                dispatcher.on("finish",()=>{
+                    bot.queue.shift()
+                })
+            })
         })
-   })
+
+    }else{
+        voiceChannel.leave()
+    }
+
+
+
+
 
 
 }
 
 module.exports.help = {
     name : "music",
-    info : "Explication de la commande"
+    info : "Envoyez un lien youtube"
 }
 
