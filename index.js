@@ -11,8 +11,8 @@ const owner = process.env.OWNER
 const token = process.env.TOKEN
 const prefix = process.env.PREFIX
 
-
-
+//Init queue for music
+var serverqueue = new Map()
 
 //read commands files
 fs.readdir('./cmds', (err,files) => {
@@ -58,8 +58,8 @@ bot.on('message',msg => {
 
     if (bot.commands.get(command.slice(prefix.length))){
         let cmd = bot.commands.get(command.slice(prefix.length));
-        if (cmd){
-            cmd.run(bot,msg,args);
+        if (cmd) {
+            cmd.run(bot, msg, args);
         }
     }
 
