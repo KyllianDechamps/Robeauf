@@ -5,14 +5,14 @@ require('dotenv/config')
 // initialise are bot
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
-bot.queue = []
+
 //import settings
 const owner = process.env.OWNER
 const token = process.env.TOKEN
 const prefix = process.env.PREFIX
 
 //Init queue for music
-var serverqueue = new Map()
+var active = new Map()
 
 //read commands files
 fs.readdir('./cmds', (err,files) => {
@@ -35,7 +35,11 @@ fs.readdir('./cmds', (err,files) => {
 })
 
 
+//Options always passed to command
+const opt = {
+    active: active,
 
+}
 
 
 bot.on('ready', async () => {
@@ -59,7 +63,7 @@ bot.on('message',msg => {
     if (bot.commands.get(command.slice(prefix.length))){
         let cmd = bot.commands.get(command.slice(prefix.length));
         if (cmd) {
-            cmd.run(bot, msg, args);
+            cmd.run(bot, msg, args,opt);
         }
     }
 
