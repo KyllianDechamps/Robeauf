@@ -1,6 +1,6 @@
 module.exports.run = async (bot , message , args) => {
     await message.author.send('```Javascript\n'  +
-        'module.exports.run = async (bot , message , args) => {\n' +
+        'module.exports.run = async (bot , message , args , opt) => {\n' +
         '    //Ce que ma commande doit faire\n' +
         '}\n' +
         '\n' +
