@@ -6,12 +6,14 @@ module.exports.run = async (bot , message , args) => {
         '\n' +
         'module.exports.help = {\n' +
         '      name : "macommande",\n' +
-        '      info : "Explication de la commande"\n'+
+        '      info : "Explication de la commande",\n'+
+        '      usage : "Utilisation de la commande"\n'+
         '}```')
     await message.reply('Je t\'ai envoyé un message')
 }
 
 module.exports.help = {
     name : "template",
-    info : "Envoie un template de commande en MP"
+    info : "Envoie un template de commande en MP",
+    usage: "template"
 }
