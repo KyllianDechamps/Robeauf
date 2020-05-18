@@ -3,7 +3,7 @@ const http = require('http')
 module.exports.run = async (bot , message , args , opt) => {
 
     let data =''
-    http.get('http://api.kd-dev.be/beauf',(res)=>{
+    http.get('http://api.kd-dev.be/beauf/data/jokes',(res)=>{
         const {statusCode}= res
 
         if (statusCode !== 200){
