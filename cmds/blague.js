@@ -19,8 +19,6 @@ module.exports.run = async (bot , message , args , opt) => {
                 let embed = new Discord.MessageEmbed()
                 embed.setColor("RANDOM")
                 embed.addField("Test", obj[rand].blague)
-
-                console.log(obj)
                 message.channel.send(embed)
             })
         }
