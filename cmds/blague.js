@@ -18,7 +18,7 @@ module.exports.run = async (bot , message , args , opt) => {
                 const rand = Math.floor(Math.random() * (max - min) + min);
                 let embed = new Discord.MessageEmbed()
                 embed.setColor("RANDOM")
-                embed.addField("Test", obj[rand].blague)
+                embed.addField("BEAUF", obj[rand].blague)
                 message.channel.send(embed)
             })
         }
