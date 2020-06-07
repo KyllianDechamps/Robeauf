@@ -63,6 +63,10 @@ bot.on('message',msg => {
     if (bot.commands.get(command.slice(prefix.length))){
         let cmd = bot.commands.get(command.slice(prefix.length));
         if (cmd) {
+            if (cmd.help.disabled === true) {
+                msg.channel.send("Cette commande est temporairement désactivée")
+                return;
+            }
             cmd.run(bot, msg, args,opt);
         }
     }
