@@ -29,5 +29,6 @@ if (args[0] && bot.commands.find(f => f.help.name == args[0])){
 module.exports.help = {
     name : "help",
     info : "Commande d'aide",
-    usage : "help [command name]"
+    usage : "help [command name]",
+    disabled : false
 }
