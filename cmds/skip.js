@@ -8,5 +8,7 @@ module.exports.run = async (bot , message , args ,opt) => {
 
 module.exports.help = {
     name : "skip",
-    info : "Passe au titre suivant"
+    info : "Passe au titre suivant",
+    usage : "skip",
+    disabled : false
 }
