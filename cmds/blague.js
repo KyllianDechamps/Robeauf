@@ -29,5 +29,7 @@ module.exports.run = async (bot , message , args , opt) => {
 
 module.exports.help = {
     name : "blague",
-    info : "Envoie une blague grasse"
+    info : "Envoie une blague grasse",
+    usage : "blague",
+    disabled : false
 }

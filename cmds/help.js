@@ -17,7 +17,13 @@ if (args[0] && bot.commands.find(f => f.help.name == args[0])){
 }else{
     var embed = new discord.MessageEmbed();
     await bot.commands.forEach((f,i) =>{
-        embed.addField(f.help.name,f.help.info)
+
+        if (f.help.disabled == true) {
+            embed.addField(":x: "+f.help.name,f.help.info)
+        }else{
+            embed.addField(":white_check_mark: "+f.help.name,f.help.info)
+        }
+
     })
     embed.setColor("RANDOM")
 

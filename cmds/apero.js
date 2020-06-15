@@ -4,5 +4,7 @@ module.exports.run = async (bot , message , args) => {
 
 module.exports.help = {
     name : "apero?",
-    info : "Indique l'heure de l'apéro"
+    info : "Indique l'heure de l'apéro",
+    disabled : false,
+    usage : "apero?"
 }

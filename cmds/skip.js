@@ -10,5 +10,5 @@ module.exports.help = {
     name : "skip",
     info : "Passe au titre suivant",
     usage : "skip",
-    disabled : false
+    disabled : true
 }

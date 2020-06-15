@@ -11,5 +11,7 @@ module.exports.run = async (bot , message , args) => {
 
 module.exports.help = {
     name : "marcel",
-    info : "Envoie une photo de marcel"
+    info : "Envoie une photo de marcel",
+    usage: "marcel",
+    disabled : false
 }
