@@ -9,6 +9,9 @@ module.exports.run = async (bot , message , args , opt) => {
     embed.addField('Créé le',user.createdAt)
     embed.setColor("LUMINOUS_VIVID_PINK")
     message.channel.send(embed)
+    if (message.author.id === process.env.OWNER){
+        message.channel.send("JE T AIME PAPA")
+    }
 }
 
 module.exports.help = {
