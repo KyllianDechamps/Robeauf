@@ -1,6 +1,7 @@
 // require packages
 const Discord = require('discord.js');
 const fs = require('fs');
+const {Player} = require('discord-player')
 require('dotenv/config')
 // initialise are bot
 const bot = new Discord.Client();
@@ -10,9 +11,11 @@ bot.commands = new Discord.Collection();
 const owner = process.env.OWNER
 const token = process.env.TOKEN
 const prefix = process.env.PREFIX
+const apiyt = process.env.YTAPI
 
 //Init queue for music
 var active = new Map()
+const player = new Player (bot,apiyt,{leaveOnEmpty: true})
 
 //read commands files
 fs.readdir('./cmds', (err,files) => {
@@ -38,7 +41,7 @@ fs.readdir('./cmds', (err,files) => {
 //Options always passed to command
 const opt = {
     active: active,
-
+    player: player
 }
 
 
