@@ -23,6 +23,8 @@ module.exports.run = async (bot , message , args , opt) => {
             })
         }
 
+    }).once("timeout", err =>{
+        console.error(err)
     })
 
 }
