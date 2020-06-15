@@ -11,5 +11,7 @@ module.exports.run = async (bot , message , args) => {
 
 module.exports.help = {
     name : "pastis",
-    info : "Envoie une image de pastis dans le channel"
+    info : "Envoie une image de pastis dans le channel",
+    usage : "pastis",
+    disabled : false
 }
